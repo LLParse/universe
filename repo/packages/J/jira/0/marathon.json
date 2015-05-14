@@ -1,5 +1,5 @@
 {
-  "id": "jenkins",
+  "id": "jira",
   "instances": 1,
   "mem": 1500,
   "env": {

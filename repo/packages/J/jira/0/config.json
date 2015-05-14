@@ -6,7 +6,7 @@
       "type": "string",
       "description": "JIRA installation image",
       "default": "https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.2.tar.gz"
-  	},
+    },
     "jira/mysqlConnector": {
       "type": "string",
       "description": "MySQL Connector",
