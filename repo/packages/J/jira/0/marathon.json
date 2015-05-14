@@ -1,5 +1,5 @@
 {
-  "id": {{name}},
+  "id": "{{name}}",
   "cpus": {{cpus}},
   "mem": {{mem}},
   "instances": {{instances}},
