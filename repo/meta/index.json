@@ -84,6 +84,18 @@
       }
     },
     {
+      "currentVersion":"6.4.2",
+      "description":"JIRA is the tracker for teams planning and building great products. Thousands of teams choose JIRA to capture and organize issues, assign work, and follow team activity. At your desk or on the go with the new mobile interface, JIRA helps your team get the job done.",
+      "framework":false,
+      "name":"jira",
+      "tags":[
+        "project-management"
+      ],
+      "versions":{
+        "6.4.2":"0"
+      }
+    },
+    {
       "currentVersion":"0.9.0-beta",
       "description":"Apache Kafka running on top of Apache Mesos",
       "framework":true,
