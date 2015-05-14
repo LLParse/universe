@@ -9,7 +9,7 @@
     "{{jira/image}}",
     "{{jira/mysqlConnector}}"
   ],
-  "cmd": "export JIRA_HOME=$(pwd) && cd atlassian-jira-6.4.2-standalone && sed -r -i \"s/(port=)\\\"8080\\\"/\\1\\\"$PORT0\\\"/g\" conf/server.xml && bin/start-jira.sh -fg",
+  "cmd": "export JIRA_HOME=$(pwd)/home && mkdir -p $JIRA_HOME && cd atlassian-jira-6.4.2-standalone && sed -r -i \"s/(port=)\\\"8080\\\"/\\1\\\"$PORT0\\\"/g\" conf/server.xml && bin/start-jira.sh -fg",
   "healthChecks": [
     {
       "protocol": "HTTP",
