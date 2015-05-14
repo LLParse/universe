@@ -1,0 +1,23 @@
+{
+  "id": "jenkins",
+  "instances": 1,
+  "mem": 1500,
+  "env": {
+    "JAVA_OPTS": "-Xmx1024m"
+  },
+  "uris": [
+    "{{jira/image}}",
+    "{{jira/mysqlConnector}}"
+  ],
+  "cmd": "cd atlassian-jira-6.4.2-standalone && sed -r -i \"s/(port=)\\\"8080\\\"/\\1\\\"$PORT0\\\"/g\" conf/server.xml && bin/start-jira.sh -fg",
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 90,
+      "intervalSeconds": 60,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}

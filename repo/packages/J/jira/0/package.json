@@ -1,0 +1,15 @@
+{
+  "name": "jira",
+  "version": "6.4.2",
+  "maintainer": "james.oliver@stealth.ly",
+  "website": "https://www.atlassian.com/software/jira",
+  "framework": false,
+  "description": "JIRA is the tracker for teams planning and building great products. Thousands of teams choose JIRA to capture and organize issues, assign work, and follow team activity. At your desk or on the go with the new mobile interface, JIRA helps your team get the job done.",
+  "tags": ["project-management"],
+  "images": {
+    "icon-small": "https://marketplace-cdn.atlassian.com/files/images/f7a34752-e211-4b23-a8f7-e461c7a1f382.png",
+    "icon-medium": "https://marketplace-cdn.atlassian.com/files/images/f7a34752-e211-4b23-a8f7-e461c7a1f382.png",
+    "icon-large": "https://marketplace-cdn.atlassian.com/files/images/f7a34752-e211-4b23-a8f7-e461c7a1f382.png"
+  }
+}
+

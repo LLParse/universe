@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "jira/image": {
+      "type": "string",
+      "description": "JIRA installation image",
+      "default": "https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.2.tar.gz"
+  	},
+    "jira/mysqlConnector": {
+      "type": "string",
+      "description": "MySQL Connector",
+      "default": "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.35.tar.gz"
+    }
+  }
+}
