@@ -2,15 +2,46 @@
   "$schema": "http://json-schema.org/schema#",
   "type": "object",
   "properties": {
-    "jira/image": {
-      "type": "string",
-      "description": "JIRA installation image",
-      "default": "https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.2.tar.gz"
+    "cpus": {
+      "default": 1.0,
+      "description": "CPU shares to allocate to each JIRA instance.",
+      "minimum": 0.0,
+      "type": "number"
     },
-    "jira/mysqlConnector": {
-      "type": "string",
+    "instances": {
+      "default": 1,
+      "description": "Number of JIRA instances to run.",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "mem": {
+      "default": 1024.0,
+      "description": "Memory (MB) to allocate to each JIRA instance.",
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "mysql-connector": {
+      "default": "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.35.tar.gz",
       "description": "MySQL Connector",
-      "default": "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.35.tar.gz"
+      "type": "string"
+    },
+    "name": {
+      "default": "atlassian-jira",
+      "description": "The task name to register with Mesos.",
+      "type": "string",
+      "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
+    },
+    "package": {
+      "default": "https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.2.tar.gz",
+      "description": "JIRA installation image",
+      "type": "string"
     }
-  }
+  },
+  "required": [
+    "cpus",
+    "instances",
+    "mem",
+    "name",
+    "package"
+  ]
 }

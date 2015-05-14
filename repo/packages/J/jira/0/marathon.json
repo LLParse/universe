@@ -1,15 +1,14 @@
 {
-  "id": "jira",
-  "instances": 1,
-  "mem": 1500,
-  "env": {
-    "JAVA_OPTS": "-Xmx1024m"
-  },
+  "id": {{name}},
+  "cpus": {{cpus}},
+  "mem": {{mem}},
+  "instances": {{instances}},
+  "env": {},
   "uris": [
-    "{{jira/image}}",
-    "{{jira/mysqlConnector}}"
+    "{{package}}",
+    "{{mysql-connector}}"
   ],
-  "cmd": "export JIRA_HOME=$(pwd)/home && mkdir -p $JIRA_HOME && cd atlassian-jira-6.4.2-standalone && sed -r -i \"s/(port=)\\\"8080\\\"/\\1\\\"$PORT0\\\"/g\" conf/server.xml && bin/start-jira.sh -fg",
+  "cmd": "export JIRA_HOME=$(pwd)/home && mkdir -p $JIRA_HOME && cp mysql-connector-java-5.1.35/mysql-connector-java-5.1.35-bin.jar atlassian-jira-6.4.2-standalone/lib/ && cd atlassian-jira-6.4.2-standalone && sed -r -i \"s/(port=)\\\"8080\\\"/\\1\\\"$PORT0\\\"/g\" conf/server.xml && bin/start-jira.sh -fg",
   "healthChecks": [
     {
       "protocol": "HTTP",
