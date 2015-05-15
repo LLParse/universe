@@ -123,6 +123,19 @@
       }
     },
     {
+      "currentVersion":"0.8.1",
+      "description":"A cluster-wide init and control system for services in cgroups or Docker containers.",
+      "framework":true,
+      "name":"marathon",
+      "tags":[
+        "mesosphere",
+        "framework"
+      ],
+      "versions":{
+        "0.8.1":"0"
+      }
+    },
+    {
       "currentVersion":"alpha",
       "description":"DNS-based service discovery for Mesos.",
       "framework":false,

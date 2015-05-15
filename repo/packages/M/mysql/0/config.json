@@ -1,0 +1,67 @@
+{
+  "properties": {
+    "mysql": {
+      "additionalProperties": false,
+      "depscription": "MySQL specific configuration properties",
+      "properties": {
+        "cpus": {
+          "default": 1.0,
+          "description": "CPU shares to allocate to each Marathon instance.",
+          "minimum": 0.0,
+          "type": "number"
+        },
+        "framework-name": {
+          "default": "mysos",
+          "description": "The framework name to register with Mesos.",
+          "type": "string",
+          "pattern": "^/?(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
+        },
+        "http-port": {
+          "default": 0,
+          "description": "The port on which to listen for HTTP requests.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "instances": {
+          "default": 1,
+          "description": "Number of Marathon instances to run.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "mem": {
+          "default": 512.0,
+          "description": "Memory (MB) to allocate to each Marathon instance.",
+          "minimum": 0.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "cpus",
+        "framework-name",
+        "http-port",
+        "instances",
+        "mem"
+      ],
+      "type": "object"
+    },
+    "mesos": {
+      "depscription": "Mesos specific configuration properties",
+      "properties": {
+        "master": {
+          "default": "zk://master.mesos:2181/mesos",
+          "description": "The URL of the Mesos master. The format is a comma-delimited list of hosts like zk://host1:port,host2:port/mesos. If using ZooKeeper, pay particular attention to the leading zk:// and trailing /mesos! If not using ZooKeeper, standard host:port patterns, like localhost:5050 or 10.0.0.5:5050,10.0.0.6:5050, are also acceptable.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "master"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "mysql",
+    "mesos"
+  ],
+  "type": "object"
+}

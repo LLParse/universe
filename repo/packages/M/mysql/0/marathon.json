@@ -1,0 +1,9 @@
+{
+  "id": "{{mysql.framework-name}}",
+  "cpus": {{mysql.cpus}},
+  "mem": {{mysql.mem}},
+  "instances": {{mysql.instances}},
+  "ports": [0],
+  "uris": ["https://github.com/twitter/mysos/archive/master.zip"],
+  "cmd": "cd mysos-master && virtualenv . && bin/pip install 'protobuf==2.6.1' && bin/python setup.py install"
+}
